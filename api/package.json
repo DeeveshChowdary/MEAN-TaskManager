@@ -1,0 +1,26 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body": "^5.1.0",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "email-existence": "^0.1.6",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "loadash": "^1.0.0",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.9.15",
+    "nodemailer": "^6.4.8",
+    "nodemon": "^2.0.4",
+    "parser": "^0.1.4"
+  }
+}
