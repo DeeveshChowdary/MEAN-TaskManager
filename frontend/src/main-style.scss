@@ -1,0 +1,68 @@
+/* This is where we put global styles and change variable values*/
+
+/* Import Fonts (Lato and Nunito)*/
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Nunito:400,700|Courgette:400,700');
+
+
+
+
+$turquoise:pink;
+$green: pink;
+$light-green: rgb(223, 119, 137); 
+$dark-green: #FF00FF;
+$pink:rgb(219, 159, 187);
+$light:#f8f8f8;
+
+
+/*Update Bulma's global variables*/
+$family-sans-serif: "Courgette", sans-serif;
+$primary: $dark-green;
+
+$link: $dark-green;
+
+
+/* Update some of Bulma's component variables*/
+
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+
+
+/* Set custom global styles (will be applied to whole app)*/
+
+html {
+    background-image: url("src/assets/a.jpg");
+}
+
+html, body {
+    height: 100%;
+}
+.centered-content{
+    display: flex;
+   justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: rgb(231, 124, 178);
+    background-image: url("src/assets/a.jpg");
+}
+.model-box{
+    min-height: 250px;
+    width: 45%;
+    min-width: 380px;
+    background: white;
+    border-radius: 5px;
+    padding: 5px;
+}
+.title{
+    font-family: 'Courgette';
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.white-box{
+    padding:35px;
+    background:white;
+    border-radius: 5px;
+}
+
