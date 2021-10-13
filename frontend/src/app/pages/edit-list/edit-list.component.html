@@ -1,0 +1,25 @@
+<div class="centered-content">
+    <div class="model-box">
+       <h1 class="title has-text-Courgette">
+           Edit a List
+       </h1> 
+       <div class="field is-horizontal">
+        <div class="field-label has-text-Courgette is-normal">
+          <label class="label has-text-Courgette ">New list</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <p class="control">
+              <input #listTitleInput class="input has-background-light is-medium" type="text" placeholder="Enter list name..">
+            </p>
+          </div>
+        </div>
+      </div>
+       <br><br>
+       <div class="buttons is-right">
+           <button class="button has-background-light is-medium" (click)=updateList(listTitleInput.value) [routerLink]="['/lists']" >Save</button>
+           <button class="button has-background-light is-medium" routerLink="/lists">cancel</button>
+       </div>
+    </div>
+</div>
+

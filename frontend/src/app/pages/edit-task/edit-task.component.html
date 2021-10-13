@@ -1,0 +1,32 @@
+<div class="centered-content">
+    <div class="white-box">
+      <h1 class="title">
+        Edit task
+      </h1>
+      
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+          <label class="label">New Task</label>
+        </div>
+        <div class="field-body">
+          <div class="field">
+            <p class="control">
+              <input #taskTitleInput class="input has-background-light is-medium" type="text" placeholder="Enter task name..">
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="field is-horizontal">
+        <div class="field-label is-normal">
+            <label class="label"> Enter Due date for task</label>
+        </div>
+        <ejs-datetimepicker id='datetimepicker' placeholder='Select a date'[(ngModel)]="selectedDate"(dateChange)="getDate(selectedDate)" [value]='dateValue' [min]='minDate' [max]='maxDate'></ejs-datetimepicker>
+      
+      </div>
+      <br><br>
+      <div class="buttons is-right">
+        <button class="button is-medium" routerLink="/">Cancel</button>
+        <button class="button is-primary has-text-white is-medium" (click)="updateTask(taskTitleInput.value,getDate(selectedDate))">Save</button>
+      </div>
+    </div>
+  </div>

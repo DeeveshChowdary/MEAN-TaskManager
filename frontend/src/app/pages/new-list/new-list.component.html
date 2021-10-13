@@ -1,0 +1,13 @@
+<div class="centered-content">
+    <div class="model-box">
+       <h1 class="title has-text-Courgette">
+           create a new list
+       </h1> 
+       <input #listTitleInput class="input has-background-light is-medium" type="text" placeholder="Enter List name..">
+       <br><br>
+       <div class="buttons is-right">
+           <button class="button has-background-light is-medium" (click)=createList(listTitleInput.value)>create</button>
+           <button class="button has-background-light is-medium" routerLink="/">cancel</button>
+       </div>
+    </div>
+</div>

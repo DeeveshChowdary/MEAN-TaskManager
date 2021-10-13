@@ -1,0 +1,85 @@
+<div class="centered-content">
+    <div class="task-manager-container has-background-white">
+        <div class="sidebar">
+            <h1 class="title has-text-Courgette">
+                Lists
+            </h1>
+            <div class="list-menu">
+                <a class="list-menu-item " *ngFor="let list of lists" [routerLink]="['/lists',list._id]"routerLinkActive ="is-active" (click)="onNotificationclick()">
+                  <p>{{list.title}}</p>
+                </a>
+            </div>
+          
+           <button class="button is-primary has-text-white" routerLink='/new-list'>+New List</button>  
+        </div>
+        <div class="tasks-lists-container has-background-pink">
+            <div *ngIf="tasks">
+                <div class="top-bar">
+                    <h1 class="title has-text-Courgette">
+                        Tasks
+                    </h1>
+                    <button class="button" (click)="onMailbuttonClicked()"  >
+                       <span class="icon is-small">
+                         <i class="fas fa-mail-bulk" aria-hidden="true"></i>
+                       </span>
+                     </button>
+                    <div class="dropdown is-hoverable is-right">
+                        <div class="dropdown-trigger">
+                          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4" >
+                           <!-- <span>Hover me</span>-->
+                            <span class="icon is-small">
+                              <i class="fas fa-cog" aria-hidden="true"></i>
+                            </span>
+                          </button>
+                        </div>
+                        <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                          <div class="dropdown-content">
+                            <a [routerLink]="['/edit-list',SelectedListId]" class="dropdown-item">
+                                Edit
+                              </a>
+                              <a (click)="onDeleteListClick()" class="dropdown-item has-text-danger">
+                                Delete
+                              </a>
+                              <a  (click)="onNotificationclick()" class="dropdown-item">
+                                Notification
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <button class="button is-danger is-rounded span:5px"(click)="onLogoutButtonClicked()">
+                          LOGOUT
+                        </button>                                    
+                   </div>              
+                <!--task elements-->
+                <div class="task-container">
+                   <div class="task"*ngFor="let task of tasks"(click)="onTaskClick(task)" [ngClass]="{'completed':task.completed}">
+                       <div class="task-text">
+                           <p > NAME: {{task.title}} <br><br> DUE: {{task.date}}  </p>                     
+                         </div>
+                         <div class="task-buttons">                    
+                            <button class="button" [routerLink]="['/lists', SelectedListId, 'edit-task', task._id]">
+                               <div class="icon">
+                                  <i class="fas fa-edit"></i>
+                                </div>
+                              </button>
+                              <button class="button is-danger"(click)="onDeleteTaskClick(task._id)"style="margin-left:10px">
+                                  <div class="icon">
+                                     <i class="fas fa-trash"></i>
+                                   </div>
+                               </button>
+                           </div>                   
+                       </div>
+                      <h3 class="empty-state-text"*ngIf="tasks.length ===0">There are no tasks here click the add button to create new task!!</h3>
+                   </div>
+                 </div>
+                 <button routerLink="./new-task"class="circle-add-button button is-primary ">
+                  <img src="../../../assets/plus-icon.svg">
+                 </button>
+          
+                                          
+            <div *ngIf="!tasks">
+              <h3 class="empty-state-text ">please select a list from sidebar</h3>
+            </div> 
+          </div>
+      </div>
+</div>
